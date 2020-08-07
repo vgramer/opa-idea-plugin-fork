@@ -32,4 +32,4 @@ jobs:
     - name: Build and test
       run: |
         export PATH=/tmp/opa_bin:$PATH
-        ./gradlew assemble test
+        ./gradlew --stacktrace --debug --no-daemon clean assemble test
