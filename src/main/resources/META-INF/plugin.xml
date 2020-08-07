@@ -55,6 +55,9 @@
         <!-- TODOs -->
         <todoIndexer filetype="Rego file" implementationClass="org.openpolicyagent.ideaplugin.ide.todo.RegoLexerBasedTodoIndexer"/>
         <indexPatternBuilder implementation="org.openpolicyagent.ideaplugin.ide.todo.RegoTodoIndexPatternBuilder"/>
+
+        <!-- Typing -->
+        <lang.braceMatcher language="rego" implementationClass="org.openpolicyagent.ideaplugin.ide.typing.RegoBraceMatcher"/>
     </extensions>
 
     <actions>
