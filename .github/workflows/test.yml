@@ -11,7 +11,13 @@ on:
 
 jobs:
   build:
-
+    strategy:
+      fail-fast: false
+      matrix:
+        platform-version: [ 201, 202 ]
+    timeout-minutes: 60
+    env:
+      ORG_GRADLE_PROJECT_platformVersion: ${{ matrix.platform-version }}
     runs-on: ubuntu-latest
 
     steps:
@@ -32,4 +38,4 @@ jobs:
     - name: Build and test
       run: |
         export PATH=/tmp/opa_bin:$PATH
-        ./gradlew assemble test
+        ./gradlew :test
