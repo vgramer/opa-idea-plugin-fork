@@ -39,3 +39,15 @@ jobs:
       run: |
         export PATH=/tmp/opa_bin:$PATH
         ./gradlew :test
+
+  # This job is successful if all depend jobs are successful. To be able to merge the PR, this job must be successful
+  #
+  all-checks:
+    needs: [build]
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    env:
+      status: ${{ needs }}
+    steps:
+    - name: Finish check
+      run: echo "--->$status"
