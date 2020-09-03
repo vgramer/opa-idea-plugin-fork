@@ -26,6 +26,7 @@ jobs:
       run: |
         if [ "${ORG_GRADLE_PROJECT_platformVersion}" == "201" ]; then
           echo "platform 201"
+          exit 1
         else
           echo "platform 202"
         fi
