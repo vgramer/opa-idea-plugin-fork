@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ always() }}
     env:
-      status: ${{ fromJson(needs.build.result) }}
+      JOB_CONTEXT: ${{ toJson(job) }}
     steps:
     - name: Finish check
-      run: echo "--->$status"
+      run: echo "--->$JOB_CONTEXT"
