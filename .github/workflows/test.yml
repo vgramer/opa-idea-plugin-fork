@@ -25,7 +25,7 @@ jobs:
     - name: Build and test
       run: |
         if [ "${platform-version}" == "201" ]; then
-          echo "platform 201"
+          echo "platform 201 @${platform-version}@"
         else
           echo "platform 202"
         fi
