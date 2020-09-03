@@ -24,7 +24,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build and test
       run: |
-        echo "platform version ==> $platform-version"
+        if [ ${platform-version} == "201" ]; then
+          echo "platform 201"
+        else
+          echo "platform 202"
+        fi
 
   # This job is successful if all depend jobs are successful. To be able to merge the PR, this job must be successful
   #
