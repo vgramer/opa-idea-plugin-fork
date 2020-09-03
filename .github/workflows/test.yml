@@ -24,8 +24,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build and test
       run: |
-        if [ "${platform-version}" == "201" ]; then
-          echo "platform 201 @${platform-version}@"
+        if [ "${ORG_GRADLE_PROJECT_platformVersion}" == "201" ]; then
+          echo "platform 201"
         else
           echo "platform 202"
         fi
