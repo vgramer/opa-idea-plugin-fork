@@ -35,6 +35,8 @@ First, in IntelliJ IDEA, from Preferences>Plugins, add `https://plugins.jetbrain
 
 Then, search "opa" in the Marketplace tab and install the plugin
 
+<script defer src="https://plugins.jetbrains.com/assets/scripts/mp-widget.js"></script>
+
 ![Step 3](docs/user/img/3_install_opa_plugin.png)
 ## from source
 You can build the project from source and then install it. Build instructions are available [here](docs/devel/setup_development_env.md)
