@@ -11,7 +11,7 @@ on:
 
 jobs:
   check-license:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
     - run: ./hack/check-license.sh
@@ -30,7 +30,7 @@ jobs:
     timeout-minutes: 60
     env:
       ORG_GRADLE_PROJECT_platformVersion: ${{ matrix.platform-version }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     needs: check-gradle-wrapper
 
     steps:
@@ -61,12 +61,12 @@ jobs:
     - name: Build and test
       run: |
         export PATH=/tmp/opa_bin:$PATH
-        ./gradlew :test
+        ./gradlew --info :test
 
   # This job is successful if all depend jobs are successful. To be able to merge the PR, this job must be successful
   all-checks:
     needs: [build, check-license, check-gradle-wrapper]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     if: ${{ always() }}
     env:
       NEEDS_CONTEXT: ${{ toJson(needs) }}
