@@ -26,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform-version: [ 201, 202 ]
+        platform-version: [ 202 ]
     timeout-minutes: 60
     env:
       ORG_GRADLE_PROJECT_platformVersion: ${{ matrix.platform-version }}
@@ -61,7 +61,7 @@ jobs:
     - name: Build and test
       run: |
         export PATH=/tmp/opa_bin:$PATH
-        ./gradlew :test
+        ./gradlew --info :test
 
     - name: Verify plugin.xml
       run: ./gradlew :plugin:verifyPlugin
@@ -70,7 +70,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform-version: [ 201, 202 ]
+        platform-version: [ 202 ]
     timeout-minutes: 60
     env:
       ORG_GRADLE_PROJECT_platformVersion: ${{ matrix.platform-version }}
